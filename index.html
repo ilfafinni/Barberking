@@ -1,12 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barberking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberKing | Barbería en Chile</title>
+  <style>
+    :root {
+      --gold: #d4a848;
+      --dark: #111;
+      --light: #f6f6f6;
+      --card: #1c1c1c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(120deg, rgba(0,0,0,0.85), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=80') center/cover;
+      padding: 2rem 1rem 4rem;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+    }
+
+    .hero-text {
+      max-width: 680px;
+      margin: 1rem auto 1.6rem;
+      color: #e2e2e2;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 0.8rem 1.15rem;
+      border-radius: 8px;
+      font-weight: bold;
+      border: 2px solid var(--gold);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-secondary {
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    section { margin-top: 2rem; }
+
+    .section-title {
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+      font-size: 1.65rem;
+    }
+
+    .section-subtitle { color: #c8c8c8; margin-top: 0; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .service-card h3 {
+      margin: 0 0 0.4rem;
+      color: #fff;
+    }
+
+    .price {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .booking {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.94rem;
+      color: #ddd;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #3a3a3a;
+      padding: 0.75rem;
+      font: inherit;
+      background: #151515;
+      color: #fff;
+    }
+
+    button {
+      cursor: pointer;
+      background: var(--gold);
+      border: 0;
+      color: #111;
+      font-weight: bold;
+    }
+
+    .info-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .info-list strong { color: var(--gold); }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #2a2a2a;
+      padding: 1.25rem;
+      color: #bbb;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .booking {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Bienvenido a Barberking</h1>
-    <p>Este es un ejemplo de archivo HTML.</p>
+  <header>
+    <div class="logo">BARBERKING</div>
+    <h1 class="hero-title">Estilo, precisión y experiencia premium para tu corte</h1>
+    <p class="hero-text">Inspirado en la identidad de BarberKing en Instagram, este sitio te permite conocer servicios y reservar tu hora de manera rápida.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#agenda">Reservar hora</a>
+      <a class="btn btn-secondary" href="https://www.instagram.com/barberking.cl?igsh=MXEyMWEwMXU5YTdxYw==" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Nuestros servicios</h2>
+      <p class="section-subtitle">Calidad profesional y atención personalizada.</p>
+      <div class="services">
+        <article class="service-card">
+          <h3>Corte clásico / fade</h3>
+          <p>Asesoría de estilo + terminación precisa para cada tipo de rostro.</p>
+          <p class="price">Desde $12.000 CLP</p>
+        </article>
+        <article class="service-card">
+          <h3>Perfilado de barba</h3>
+          <p>Definición de líneas, rebaje y acabado limpio para un look impecable.</p>
+          <p class="price">Desde $8.000 CLP</p>
+        </article>
+        <article class="service-card">
+          <h3>Corte + barba</h3>
+          <p>Servicio completo para renovar tu imagen en una sola visita.</p>
+          <p class="price">Desde $18.000 CLP</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="agenda">
+      <h2 class="section-title">Agenda tu hora</h2>
+      <p class="section-subtitle">Completa el formulario y te contactaremos para confirmar disponibilidad.</p>
+      <div class="booking">
+        <div class="panel">
+          <form class="booking-form" id="bookingForm">
+            <div>
+              <label for="name">Nombre completo</label>
+              <input id="name" name="name" type="text" required placeholder="Ej: Matías González">
+            </div>
+            <div>
+              <label for="phone">Teléfono / WhatsApp</label>
+              <input id="phone" name="phone" type="tel" required placeholder="+56 9 1234 5678">
+            </div>
+            <div>
+              <label for="service">Servicio</label>
+              <select id="service" name="service" required>
+                <option value="">Selecciona un servicio</option>
+                <option>Corte clásico / fade</option>
+                <option>Perfilado de barba</option>
+                <option>Corte + barba</option>
+              </select>
+            </div>
+            <div>
+              <label for="date">Fecha preferida</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div>
+              <label for="notes">Observaciones</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Ej: Quiero un fade medio"></textarea>
+            </div>
+            <button type="submit">Enviar solicitud</button>
+          </form>
+        </div>
+
+        <aside class="panel">
+          <h3>Información de contacto</h3>
+          <ul class="info-list">
+            <li><strong>Horario:</strong> Lunes a Sábado, 10:00 a 20:00</li>
+            <li><strong>Ubicación:</strong> Chile (agrega aquí dirección exacta)</li>
+            <li><strong>Instagram:</strong> @barberking.cl</li>
+            <li><strong>Confirmación:</strong> Te responderemos por WhatsApp o Instagram DM.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> BarberKing. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const form = document.getElementById('bookingForm');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('¡Solicitud enviada! Te contactaremos para confirmar tu hora.');
+      form.reset();
+    });
+  </script>
 </body>
 </html>
