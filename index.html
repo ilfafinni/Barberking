@@ -3,286 +3,704 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BarberKing | Barbería en Chile</title>
-  <style>
-    :root {
-      --gold: #d4a848;
-      --dark: #111;
-      --light: #f6f6f6;
-      --card: #1c1c1c;
-    }
+  <title>BarberKing · Barbería Premium en Santiago</title>
+  <meta name="description" content="BarberKing: cortes clásicos, perfilado de barba y experiencia premium. Reserva tu hora con nuestros barberos en línea.">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta property="og:title" content="BarberKing · Barbería Premium">
+  <meta property="og:description" content="Cortes clásicos, perfilado de barba y experiencia premium. Reserva tu hora en línea.">
 
-    * { box-sizing: border-box; }
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317171a'/%3E%3Ctext x='50' y='66' font-size='46' text-anchor='middle' fill='%23d4a848' font-family='Arial Black'%3EBK%3C/text%3E%3C/svg%3E">
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--dark);
-      color: var(--light);
-      line-height: 1.5;
-    }
-
-    header {
-      background: linear-gradient(120deg, rgba(0,0,0,0.85), rgba(0,0,0,0.55)),
-        url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=80') center/cover;
-      padding: 2rem 1rem 4rem;
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-title {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: clamp(1.7rem, 4vw, 2.8rem);
-    }
-
-    .hero-text {
-      max-width: 680px;
-      margin: 1rem auto 1.6rem;
-      color: #e2e2e2;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 0.8rem 1.15rem;
-      border-radius: 8px;
-      font-weight: bold;
-      border: 2px solid var(--gold);
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #111;
-    }
-
-    .btn-secondary {
-      color: var(--gold);
-      background: transparent;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
-    }
-
-    section { margin-top: 2rem; }
-
-    .section-title {
-      color: var(--gold);
-      margin-bottom: 0.25rem;
-      font-size: 1.65rem;
-    }
-
-    .section-subtitle { color: #c8c8c8; margin-top: 0; }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .service-card {
-      background: var(--card);
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      padding: 1rem;
-    }
-
-    .service-card h3 {
-      margin: 0 0 0.4rem;
-      color: #fff;
-    }
-
-    .price {
-      color: var(--gold);
-      font-weight: bold;
-    }
-
-    .booking {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .panel {
-      background: var(--card);
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid #2a2a2a;
-    }
-
-    .booking-form {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    label {
-      font-size: 0.94rem;
-      color: #ddd;
-    }
-
-    input, select, textarea, button {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid #3a3a3a;
-      padding: 0.75rem;
-      font: inherit;
-      background: #151515;
-      color: #fff;
-    }
-
-    button {
-      cursor: pointer;
-      background: var(--gold);
-      border: 0;
-      color: #111;
-      font-weight: bold;
-    }
-
-    .info-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .info-list strong { color: var(--gold); }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid #2a2a2a;
-      padding: 1.25rem;
-      color: #bbb;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 860px) {
-      .booking {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">BARBERKING</div>
-    <h1 class="hero-title">Estilo, precisión y experiencia premium para tu corte</h1>
-    <p class="hero-text">Inspirado en la identidad de BarberKing en Instagram, este sitio te permite conocer servicios y reservar tu hora de manera rápida.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#agenda">Reservar hora</a>
-      <a class="btn btn-secondary" href="https://www.instagram.com/barberking.cl?igsh=MXEyMWEwMXU5YTdxYw==" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a class="logo" href="#inicio" aria-label="BarberKing, volver al inicio">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 3.5h15" />
+            <path d="M6 7.5a6 6 0 0 0 12 0" />
+            <path d="M8 7.5l-3 13h14l-3-13" />
+            <path d="M6.5 16.5h11" />
+          </svg>
+        </span>
+        <span class="logo-word">Barber<b class="gold-text">King</b><small>Barbería · Grooming</small></span>
+      </a>
+
+      <nav class="nav-panel" id="navPanel" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#barberos" class="nav-link">Barberos</a></li>
+          <li><a href="#galeria" class="nav-link">Galería</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-gold btn-sm" href="#reserva">Reservar hora</a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section>
-      <h2 class="section-title">Nuestros servicios</h2>
-      <p class="section-subtitle">Calidad profesional y atención personalizada.</p>
-      <div class="services">
-        <article class="service-card">
-          <h3>Corte clásico / fade</h3>
-          <p>Asesoría de estilo + terminación precisa para cada tipo de rostro.</p>
-          <p class="price">Desde $12.000 CLP</p>
-        </article>
-        <article class="service-card">
-          <h3>Perfilado de barba</h3>
-          <p>Definición de líneas, rebaje y acabado limpio para un look impecable.</p>
-          <p class="price">Desde $8.000 CLP</p>
-        </article>
-        <article class="service-card">
-          <h3>Corte + barba</h3>
-          <p>Servicio completo para renovar tu imagen en una sola visita.</p>
-          <p class="price">Desde $18.000 CLP</p>
-        </article>
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <span class="hero-eyebrow">Desde 2018 · Santiago de Chile</span>
+        <h1 class="hero-title">Tu estilo,<br><span class="gold-text">nuestro oficio</span></h1>
+        <p class="hero-deco">— El arte del corte clásico, a navaja y tijera —</p>
+        <p class="hero-sub">Cortes precisos, barba impecable y un ritual pensado para que salgas renovado. Agenda tu hora en menos de un minuto.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#reserva">Reservar mi hora</a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios y precios</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><b>Lun — Sáb</b><span>10:00 – 20:00 hrs</span></div>
+          <div class="hero-meta-item"><b>Reserva por WhatsApp</b><span>Confirmación en minutos</span></div>
+          <div class="hero-meta-item"><b>Barberos senior</b><span>Especialistas en cada detalle</span></div>
+        </div>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="scroll-cue" aria-hidden="true"><span></span></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>Fades perfectos <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M11 3l-3.5 9 3.5 3 3.5-3L13 3z"/><path d="M5.5 15l-1.6 4.5h6.6"/></svg> Barba impecable <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><rect x="6" y="14" width="12" height="7" rx="2"/><path d="M9 14V7a3 3 0 0 1 6 0v7"/><path d="M9 10H6.5M15 10h2.5"/></svg> Toalla caliente <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M4 15c4 3 12 3 16 0"/><path d="M4 19c4 2.5 12 2.5 16 0"/><path d="M12 5l4 2H8z"/></svg> Estilo premium <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l2.4 6H21l-5 4 2 7-6-4.5L6 20l2-7-5-4h6.6z"/></svg> </span>
+      </div>
+    </div>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament-line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.9 15.1M14.5 14.5L20 20M8.9 8.9L12 12"/>
+      </svg>
+      <span class="ornament-line"></span>
+    </div>
+
+    <!-- ================= ACERCA + STATS ================= -->
+    <section class="block" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid" style="display:grid;grid-template-columns:1fr 1.1fr;gap:22px;align-items:center;">
+          <div class="gallery-item" style="aspect-ratio:4/3;">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=75" alt="Barbero trabajando con precisión un corte en la silla" loading="lazy">
+          </div>
+          <div style="display:grid;gap:16px;">
+            <h2 id="about-title" class="gold-text">Más que un corte, una experiencia</h2>
+            <p class="section-sub" style="font-size:1.02rem;">En <strong>BarberKing</strong> cada visita es un ritual: asesoría de estilo, técnica a navaja y terminaciones de alto estándar. Nuestro equipo combina oficio clásico con las últimas tendencias para que tu look hable por ti.</p>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:10px;">
+              <li style="display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.95rem;">
+                <svg style="width:20px;height:20px;stroke:var(--gold);flex:0 0 20px;" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                Asesoría de corte según tu rostro y estilo de vida
+              </li>
+              <li style="display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.95rem;">
+                <svg style="width:20px;height:20px;stroke:var(--gold);flex:0 0 20px;" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                Productos de barbería de alta gama
+              </li>
+              <li style="display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.95rem;">
+                <svg style="width:20px;height:20px;stroke:var(--gold);flex:0 0 20px;" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                Ambiente pensado para relajarse
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="stats-band" id="statsBand" style="margin-top:clamp(28px,4vw,44px);"></div>
       </div>
     </section>
 
-    <section id="agenda">
-      <h2 class="section-title">Agenda tu hora</h2>
-      <p class="section-subtitle">Completa el formulario y te contactaremos para confirmar disponibilidad.</p>
-      <div class="booking">
-        <div class="panel">
-          <form class="booking-form" id="bookingForm">
-            <div>
-              <label for="name">Nombre completo</label>
-              <input id="name" name="name" type="text" required placeholder="Ej: Matías González">
-            </div>
-            <div>
-              <label for="phone">Teléfono / WhatsApp</label>
-              <input id="phone" name="phone" type="tel" required placeholder="+56 9 1234 5678">
-            </div>
-            <div>
-              <label for="service">Servicio</label>
-              <select id="service" name="service" required>
-                <option value="">Selecciona un servicio</option>
-                <option>Corte clásico / fade</option>
-                <option>Perfilado de barba</option>
-                <option>Corte + barba</option>
-              </select>
-            </div>
-            <div>
-              <label for="date">Fecha preferida</label>
-              <input id="date" name="date" type="date" required>
-            </div>
-            <div>
-              <label for="notes">Observaciones</label>
-              <textarea id="notes" name="notes" rows="3" placeholder="Ej: Quiero un fade medio"></textarea>
-            </div>
-            <button type="submit">Enviar solicitud</button>
-          </form>
+    <!-- ================= SERVICIOS ================= -->
+    <section class="block" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Conoce tu inversión</span>
+          <h2 id="services-title">Servicios &amp; precios</h2>
+          <p class="section-sub">Precios transparentes y terminaciones garantizadas. Elige tu servicio y agéndalo al instante.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= BARBEROS ================= -->
+    <section class="block" id="barberos" aria-labelledby="barbers-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">El equipo</span>
+          <h2 id="barbers-title">Nuestros barberos</h2>
+          <p class="section-sub">Cada barbero tiene su especialidad. Elige el tuyo cuando reserves.</p>
+        </div>
+        <div class="barbers-grid" id="barbersGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= GALERÍA ================= -->
+    <section class="block" id="galeria" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">El local</span>
+          <h2 id="gallery-title">Galería</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="block" aria-labelledby="testi-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Lo que dicen</span>
+          <h2 id="testi-title">Clientes que vuelven</h2>
+        </div>
+        <div class="testi-grid" id="testiGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= RESERVA ================= -->
+    <section class="block" id="reserva" aria-labelledby="booking-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Agenda online</span>
+          <h2 id="booking-title">Reserva tu hora</h2>
+          <p class="section-sub">Define tu servicio, barbero y horario libre. Al confirmar se abre WhatsApp con tu reserva lista para enviar.</p>
         </div>
 
-        <aside class="panel">
-          <h3>Información de contacto</h3>
-          <ul class="info-list">
-            <li><strong>Horario:</strong> Lunes a Sábado, 10:00 a 20:00</li>
-            <li><strong>Ubicación:</strong> Chile (agrega aquí dirección exacta)</li>
-            <li><strong>Instagram:</strong> @barberking.cl</li>
-            <li><strong>Confirmación:</strong> Te responderemos por WhatsApp o Instagram DM.</li>
-          </ul>
-        </aside>
+        <div class="booking-wrap">
+          <div class="card panel-form">
+            <form id="bookingForm" novalidate>
+              <div class="field">
+                <span class="field-label" id="svcLbl">1 · Elige tu servicio</span>
+                <div class="choice-grid" id="svcChoices" role="group" aria-labelledby="svcLbl"></div>
+              </div>
+
+              <div class="field">
+                <span class="field-label" id="barLbl">2 · Barbero</span>
+                <div class="choice-grid" id="barChoices" role="group" aria-labelledby="barLbl"></div>
+              </div>
+
+              <div class="field">
+                <span class="field-label" id="dayLbl">3 · Disponibilidad de la semana</span>
+                <div class="days-strip" id="daysStrip" role="group" aria-labelledby="dayLbl" aria-label="Elige un día"></div>
+              </div>
+
+              <div class="field">
+                <span class="field-label" id="timeLbl">4 · Hora</span>
+                <div class="time-grid" id="timeGrid" role="group" aria-labelledby="timeLbl" aria-label="Elige una hora"></div>
+                <div class="legend" aria-hidden="true">
+                  <span class="lg-free"><i></i>Libre</span>
+                  <span class="lg-pick"><i></i>Tu selección</span>
+                  <span class="lg-occ"><i></i>Ocupado</span>
+                </div>
+              </div>
+
+              <div class="admin-form-grid">
+                <div class="field">
+                  <label for="bkName">Tu nombre</label>
+                  <input class="input" id="bkName" name="name" type="text" required autocomplete="name" placeholder="Ej: Matías González">
+                </div>
+                <div class="field">
+                  <label for="bkPhone">Tu WhatsApp</label>
+                  <input class="input" id="bkPhone" name="phone" type="tel" required autocomplete="tel" placeholder="+56 9 1234 5678" inputmode="tel">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <aside class="card summary-card" aria-live="polite">
+            <div class="head">
+              <h3>Tu reserva</h3>
+              <a class="link-arrow" href="#" id="resetBooking" aria-label="Limpiar selección">Limpiar</a>
+            </div>
+            <ul class="resume-list" id="resumeList"></ul>
+            <div class="resume-empty" id="resumeEmpty">Selecciona servicio, día y hora para ver el resumen.</div>
+            <div class="resume-total" id="resumeTotal" hidden>
+              <span class="field-label" style="display:block;margin-bottom:4px;">Total estimado</span>
+              <span class="summary-total" id="resumePrice">$0</span>
+            </div>
+            <button class="btn btn-gold" id="confirmBtn" type="button" disabled>
+              <svg viewBox="0 0 24 24" width="18" height="18" style="stroke:currentColor;" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12 7.6L3 21l1.9-6A8.4 8.4 0 1 1 21 11.5z"/></svg>
+              Confirmar por WhatsApp
+            </button>
+            <p class="field-hint">Al confirmar se abrirá WhatsApp con tu reserva lista para enviar.</p>
+            <p class="summary-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+              <span>La disponibilidad en vivo se confirma por WhatsApp al reservar. Si un horario se ve ocupado, te ofreceremos el más cercano.</span>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="block" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 id="faq-title">Resolvemos tus dudas</h2>
+        </div>
+        <div class="faq-list">
+          <details class="card faq-item">
+            <summary>¿Cómo confirmo mi reserva?</summary>
+            <div class="faq-body">Completa el formulario de reserva y al presionar "Confirmar por WhatsApp" se abrirá una conversación con el mensaje de tu reserva listo. Envía ese mensaje y te confirmaremos la hora.</div>
+          </details>
+          <details class="card faq-item">
+            <summary>¿Qué pasa si llego atrasado?</summary>
+            <div class="faq-body">Avisanos por WhatsApp lo antes posible. Si el atraso supera los 15 minutos podríamos tener que reprogramar para no afectar a los siguientes clientes.</div>
+          </details>
+          <details class="card faq-item">
+            <summary>¿Aceptan cambios o cancelaciones?</summary>
+            <div class="faq-body">Sí, con al menos 2 horas de anticipación puedes reagendar o cancelar sin costo. Basta con enviarnos un mensaje desde el mismo WhatsApp de tu reserva.</div>
+          </details>
+          <details class="card faq-item">
+            <summary>¿Qué métodos de pago aceptan?</summary>
+            <div class="faq-body">Efectivo, tarjetas de débito/crédito y transferencia. Te informamos de promos y combos en nuestro Instagram.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="block" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Visítanos</span>
+          <h2 id="contact-title">Contacto &amp; ubicación</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="card contact-info">
+            <div class="contact-row" style="padding-top:18px;">
+              <span class="contact-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </span>
+              <div>
+                <h4>Dirección</h4>
+                <p id="contactAddress">Av. Siempre Viva 1234, Santiago, Chile</p>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12 7.6L3 21l1.9-6A8.4 8.4 0 1 1 21 11.5z"/></svg>
+              </span>
+              <div>
+                <h4>WhatsApp</h4>
+                <p id="contactPhone">+56 9 1234 5678 · Respuesta en minutos</p>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <div>
+                <h4>Horario</h4>
+                <div class="hours-line"><span>Lunes — Sábado</span><span id="contactHours">10:00 a 20:00</span></div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>
+              </span>
+              <div>
+                <h4>Instagram</h4>
+                <p><a href="#" id="contactIgLink" target="_blank" rel="noopener noreferrer">@barberking.cl</a> · Mira nuestro trabajo</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-embed">
+            <iframe id="mapFrame" title="Mapa de ubicación de BarberKing" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-70.69%2C-33.47%2C-70.63%2C-33.42&layer=mapnik&marker=-33.4489%2C-70.6693"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section class="block">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Listo para <span class="gold-text">renovar tu look?</span></h2>
+          <p>Reserva en 1 minuto y llega directo a la silla. Te esperamos.</p>
+          <div class="cta-actions">
+            <a class="btn btn-gold" href="#reserva">Reservar ahora</a>
+            <a class="btn btn-ghost" href="#" id="ctaIg">Seguir en Instagram</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> BarberKing. Todos los derechos reservados.
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#inicio" aria-label="BarberKing, volver al inicio">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 3.5h15" /><path d="M6 7.5a6 6 0 0 0 12 0" /><path d="M8 7.5l-3 13h14l-3-13" /><path d="M6.5 16.5h11" />
+              </svg>
+            </span>
+            <span class="logo-word">Barber<b class="gold-text">King</b><small>Barbería · Grooming</small></span>
+          </a>
+          <p>Cortes clásicos, barba impecable y una experiencia premium en el corazón de Santiago.</p>
+        </div>
+        <nav class="footer-col" aria-label="Navegación del pie">
+          <h4>Explora</h4>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#barberos">Barberos</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#reserva">Reserva</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h4>Horario</h4>
+          <ul id="footerHours">
+            <li>Lun — Sáb: 10:00 a 20:00</li>
+            <li>Domingo: Cerrado</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li id="footerPhone">+56 9 1234 5678</li>
+            <li id="footerAddress">Av. Siempre Viva 1234</li>
+            <li>
+              <div class="socials">
+                <a href="#" id="footerIg" target="_blank" rel="noopener noreferrer" aria-label="Instagram de BarberKing">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+                </a>
+                <a href="#" id="footerWa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de BarberKing">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12 7.6L3 21l1.9-6A8.4 8.4 0 1 1 21 11.5z"/></svg>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> BarberKing. Todos los derechos reservados.</span>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    const form = document.getElementById('bookingForm');
-    const year = document.getElementById('year');
-    year.textContent = new Date().getFullYear();
+  <!-- WhatsApp flotante -->
+  <a class="wa-fab" href="#" id="waFab" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.5c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4 .9 1-3.9-.2-.5A10.9 10.9 0 0 1 5.5 16C5.5 10.2 10.2 5.5 16 5.5s10.5 4.7 10.5 10.5S21.8 26.5 16 26.5zm5.8-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-.9-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+  </a>
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      alert('¡Solicitud enviada! Te contactaremos para confirmar tu hora.');
-      form.reset();
-    });
-  </script>
+  <!-- ================= PANEL ADMIN ================= -->
+  <div class="admin-shell" id="adminShell">
+    <div class="admin-top">
+      <div class="container">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 3.5h15" /><path d="M6 7.5a6 6 0 0 0 12 0" /><path d="M8 7.5l-3 13h14l-3-13" /><path d="M6.5 16.5h11" />
+          </svg>
+        </span>
+        <div>
+          <div class="admin-title">Panel admin</div>
+          <div class="admin-bread" id="adminBread">BarberKing · Gestión del local</div>
+        </div>
+        <span class="grow"></span>
+        <a class="btn btn-dark btn-sm" href="#" id="goSite">← Ver sitio</a>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" hidden>Salir</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Login -->
+      <div class="card login-box" id="adminLogin">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 3.5h15" /><path d="M6 7.5a6 6 0 0 0 12 0" /><path d="M8 7.5l-3 13h14l-3-13" /><path d="M6.5 16.5h11" />
+          </svg>
+        </span>
+        <h2>Acceso administrador</h2>
+        <p class="hint">Este panel gestiona reservas, barberos, servicios y ajustes del local. Todo se guarda en este navegador.</p>
+        <form id="loginForm">
+          <div class="field">
+            <label for="loginPass">Contraseña</label>
+            <input class="input" id="loginPass" type="password" required autocomplete="current-password" placeholder="••••••••••">
+          </div>
+          <p class="login-error" id="loginError" hidden>Contraseña incorrecta, intenta de nuevo.</p>
+          <button class="btn btn-gold" type="submit">Entrar al panel</button>
+        </form>
+        <p class="hint">Contraseña por defecto: <code>barberking</code> (cámbiala en Ajustes).</p>
+      </div>
+
+      <!-- Panel -->
+      <div class="admin-layout" id="adminPanel" hidden>
+        <nav class="admin-nav" aria-label="Secciones del panel">
+          <button data-admin-tab="rsv" aria-pressed="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 4-4"/></svg>
+            Reservas
+          </button>
+          <button data-admin-tab="barbers">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 9l1.5 3L20 9M17 15l1.5 3 1.5-3"/></svg>
+            Peluqueros
+          </button>
+          <button data-admin-tab="services">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3.5h15"/><path d="M6 7.5a6 6 0 0 0 12 0"/><path d="M8 7.5l-3 13h14l-3-13"/></svg>
+            Servicios
+          </button>
+          <button data-admin-tab="settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5h.1a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.5 1h.1a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+            Ajustes
+          </button>
+        </nav>
+
+        <div class="admin-content">
+          <!-- Reservas -->
+          <section class="admin-section is-active" data-admin-section="rsv" aria-labelledby="rsvTitle">
+            <div class="kpis" id="rsvKpis"></div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3 id="rsvTitle">Reservas</h3>
+                  <p class="muted">Registra aquí las reservas que lleguen por WhatsApp para bloquear los horarios.</p>
+                </div>
+                <button class="btn btn-dark btn-sm" id="addRsvToggle" aria-expanded="false" aria-controls="addRsvForm">+ Registrar reserva</button>
+              </div>
+              <div class="card" id="addRsvForm" style="display:none;padding:18px;margin-bottom:18px;border-color:rgba(212,168,72,.3);">
+                <form id="addRsvFormEl" class="admin-form-grid">
+                  <div class="field">
+                    <label for="aName">Nombre</label>
+                    <input class="input" id="aName" required>
+                  </div>
+                  <div class="field">
+                    <label for="aPhone">WhatsApp</label>
+                    <input class="input" id="aPhone" required placeholder="+56 9 ...">
+                  </div>
+                  <div class="field">
+                    <label for="aService">Servicio</label>
+                    <select class="select" id="aService"></select>
+                  </div>
+                  <div class="field">
+                    <label for="aBarber">Barbero</label>
+                    <select class="select" id="aBarber"></select>
+                  </div>
+                  <div class="field">
+                    <label for="aDate">Fecha</label>
+                    <input class="input" id="aDate" type="date" required>
+                  </div>
+                  <div class="field">
+                    <label for="aTime">Hora</label>
+                    <select class="select" id="aTime"></select>
+                  </div>
+                  <div class="field" style="display:flex;align-items:flex-end;gap:8px;grid-column:1/-1;">
+                    <button class="btn btn-gold" type="submit">Guardar reserva</button>
+                    <button class="btn btn-dark" type="button" id="aCancel">Cancelar</button>
+                  </div>
+                </form>
+              </div>
+              <div class="table-wrap" id="rsvTableWrap"></div>
+              <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;align-items:center;justify-content:space-between;">
+                <div class="field">
+                  <label class="sr-only" for="rsvFilter">Filtrar reservas</label>
+                  <select class="select" id="rsvFilter" style="min-width:220px;">
+                    <option value="all">Todas</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="confirmado">Confirmadas</option>
+                    <option value="cancelado">Canceladas</option>
+                  </select>
+                </div>
+                <div class="backup-actions">
+                  <button class="btn btn-dark btn-sm" id="exportRsv">Exportar JSON</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Peluqueros -->
+          <section class="admin-section" data-admin-section="barbers" aria-labelledby="barAdminTitle">
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3 id="barAdminTitle">Peluqueros del local</h3>
+                  <p class="muted">Agrega o retira barberos. Los que elimines desaparecen de la página pública.</p>
+                </div>
+                <button class="btn btn-dark btn-sm" id="addBarToggle" aria-expanded="false" aria-controls="addBarForm">+ Agregar peluquero</button>
+              </div>
+              <div class="card" id="addBarForm" style="display:none;padding:18px;margin-bottom:18px;border-color:rgba(212,168,72,.3);">
+                <form id="addBarFormEl" class="admin-form-grid">
+                  <div class="field">
+                    <label for="bName">Nombre</label>
+                    <input class="input" id="bName" required>
+                  </div>
+                  <div class="field">
+                    <label for="bSpecialty">Especialidad</label>
+                    <input class="input" id="bSpecialty" required placeholder="Ej: Fades & cortes clásicos">
+                  </div>
+                  <div class="field" style="grid-column:1/-1;">
+                    <label for="bBio">Bio breve</label>
+                    <textarea class="input" id="bBio" rows="2" placeholder="Breve presentación del peluquero"></textarea>
+                  </div>
+                  <div class="field" style="grid-column:1/-1;display:flex;gap:8px;align-items:flex-end;">
+                    <button class="btn btn-gold" type="submit">Guardar peluquero</button>
+                    <button class="btn btn-dark" type="button" id="bCancel">Cancelar</button>
+                  </div>
+                </form>
+              </div>
+              <div id="barAdminList"></div>
+            </div>
+          </section>
+
+          <!-- Servicios -->
+          <section class="admin-section" data-admin-section="services" aria-labelledby="svcAdminTitle">
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3 id="svcAdminTitle">Servicios y precios</h3>
+                  <p class="muted">Úsalos desde el formulario público y el resumen de reserva.</p>
+                </div>
+                <button class="btn btn-dark btn-sm" id="addSvcToggle" aria-expanded="false" aria-controls="addSvcForm">+ Agregar servicio</button>
+              </div>
+              <div class="card" id="addSvcForm" style="display:none;padding:18px;margin-bottom:18px;border-color:rgba(212,168,72,.3);">
+                <form id="addSvcFormEl" class="admin-form-grid">
+                  <div class="field">
+                    <label for="sName">Nombre</label>
+                    <input class="input" id="sName" required>
+                  </div>
+                  <div class="field">
+                    <label for="sPrice">Precio (CLP)</label>
+                    <input class="input" id="sPrice" type="number" min="0" required>
+                  </div>
+                  <div class="field">
+                    <label for="sDuration">Duración (min)</label>
+                    <input class="input" id="sDuration" type="number" min="5" required>
+                  </div>
+                  <div class="field" style="grid-column:1/-1;">
+                    <label for="sDesc">Descripción</label>
+                    <textarea class="input" id="sDesc" rows="2" required></textarea>
+                  </div>
+                  <div style="grid-column:1/-1;display:flex;gap:8px;align-items:flex-end;">
+                    <button class="btn btn-gold" type="submit">Guardar servicio</button>
+                    <button class="btn btn-dark" type="button" id="sCancel">Cancelar</button>
+                  </div>
+                </form>
+              </div>
+              <div id="svcAdminList"></div>
+            </div>
+          </section>
+
+          <!-- Ajustes -->
+          <section class="admin-section" data-admin-section="settings" aria-labelledby="setTitle">
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3 id="setTitle">Ajustes del negocio</h3>
+                  <p class="muted">Estos datos alimentan toda la página pública.</p>
+                </div>
+              </div>
+              <form id="settingsForm" class="admin-form-grid">
+                <div class="field">
+                  <label for="cName">Nombre del local</label>
+                  <input class="input" id="cName">
+                </div>
+                <div class="field">
+                  <label for="cTagline">Tagline</label>
+                  <input class="input" id="cTagline">
+                </div>
+                <div class="field">
+                  <label for="cPhone">Teléfono (display)</label>
+                  <input class="input" id="cPhone">
+                </div>
+                <div class="field">
+                  <label for="cWa">WhatsApp (código país + número)</label>
+                  <input class="input" id="cWa" inputmode="numeric" placeholder="56912345678">
+                </div>
+                <div class="field">
+                  <label for="cAddress">Dirección</label>
+                  <input class="input" id="cAddress">
+                </div>
+                <div class="field">
+                  <label for="cIg">IG (handle)</label>
+                  <input class="input" id="cIg" placeholder="@barberking.cl">
+                </div>
+                <div class="field">
+                  <label for="cOpen">Apertura (HH:MM)</label>
+                  <input class="input" id="cOpen" type="time" value="10:00">
+                </div>
+                <div class="field">
+                  <label for="cClose">Cierre (HH:MM)</label>
+                  <input class="input" id="cClose" type="time" value="20:00">
+                </div>
+                <div class="field">
+                  <label for="cSlot">Duración de bloque (min)</label>
+                  <input class="input" id="cSlot" type="number" min="15" step="5">
+                </div>
+                <div class="field" style="grid-column:1/-1;">
+                  <span class="field-label">Días de atención</span>
+                  <div class="choice-grid" id="cDays"></div>
+                </div>
+                <div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;">
+                  <button class="btn btn-gold" type="submit">Guardar ajustes</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3>Seguridad</h3>
+                  <p class="muted">Cambia la contraseña de acceso al panel.</p>
+                </div>
+              </div>
+              <form id="passcodeForm" class="admin-form-grid">
+                <div class="field">
+                  <label for="pNew">Nueva contraseña</label>
+                  <input class="input" id="pNew" type="password" required minlength="6" autocomplete="new-password">
+                </div>
+                <div class="field">
+                  <label for="pConfirm">Repetir contraseña</label>
+                  <input class="input" id="pConfirm" type="password" required autocomplete="new-password">
+                </div>
+                <div style="grid-column:1/-1;">
+                  <button class="btn btn-gold" type="submit">Actualizar contraseña</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3>Datos del navegador</h3>
+                  <p class="muted">Respalda la información guardada en este dispositivo o restablece los valores por defecto.</p>
+                </div>
+              </div>
+              <div class="backup-actions">
+                <button class="btn btn-dark" id="exportAll">Descargar backup (JSON)</button>
+                <button class="btn btn-dark" id="importAll">Importar backup</button>
+                <button class="btn btn-dark" id="resetAll" style="color:var(--danger);border-color:rgba(224,122,99,.4);">Restablecer demo</button>
+              </div>
+              <input type="file" id="importFile" accept="application/json,.json" hidden>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js" charset="UTF-8"></script>
+  <script src="js/store.js" charset="UTF-8"></script>
+  <script src="js/app.js" charset="UTF-8"></script>
+  <script src="js/admin.js" charset="UTF-8"></script>
 </body>
 </html>
