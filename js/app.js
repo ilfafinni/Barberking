@@ -774,6 +774,55 @@
     }, 3600);
   }
 
+  /* ---------- temas de color ---------- */
+
+  const THEMES = ['a', 'b', 'c', 'd'];
+  const THEME_KEY = 'barberking.v1.theme';
+
+  function readThemeFromUrl() {
+    try {
+      var m = /[?&]theme=([a-d])/i.exec(window.location.search);
+      return m ? m[1].toLowerCase() : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function readStoredTheme() {
+    try {
+      return window.localStorage.getItem(THEME_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyTheme(theme, persist) {
+    if (THEMES.indexOf(theme) === -1) theme = 'a';
+    document.documentElement.setAttribute('data-theme', theme);
+    $$('[data-theme-set]').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', String(btn.getAttribute('data-theme-set') === theme));
+    });
+    if (persist) {
+      try {
+        window.localStorage.setItem(THEME_KEY, theme);
+      } catch (e) {
+        /* sin persistencia: el tema igual se aplica en esta vista */
+      }
+    }
+  }
+
+  function initTheme() {
+    // Se aplica lo antes posible para evitar el parpadeo del color por defecto.
+    var initial = readThemeFromUrl() || readStoredTheme() || 'a';
+    applyTheme(initial, false);
+
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-theme-set]') : null;
+      if (!btn) return;
+      applyTheme(btn.getAttribute('data-theme-set'), true);
+    });
+  }
+
   /* ---------- barra de progreso de scroll ---------- */
 
   function initScrollProgress() {
@@ -852,6 +901,7 @@
   }
 
   function init() {
+    initTheme();
     applyContacts();
     rerender();
     bindBookingEvents();

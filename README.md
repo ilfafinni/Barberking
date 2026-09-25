@@ -2,6 +2,19 @@
 
 Sitio web premium para la barbería (dark + dorado) con reserva por WhatsApp, calendario de disponibilidad y panel de administración. 100% estático: se publica tal cual en GitHub Pages, sin backend ni base de datos.
 
+## Modelos de color
+
+El sitio incluye 4 paletas que se cambian al instante con los botones de color (en el header y en el pie). La elección se recuerda en el navegador y se puede forzar por URL:
+
+| Modelo | URL | Descripción |
+| --- | --- | --- |
+| a | `/Barberking/` | Dorado (por defecto) |
+| b | `/Barberking/?theme=b` | Blanco y negro |
+| c | `/Barberking/?theme=c` | Azul |
+| d | `/Barberking/?theme=d` | Azul eléctrico |
+
+Los 4 modelos comparten el mismo código: cada paleta redefine un conjunto de tokens CSS (`--accent`, `--bg`, `--text`, etc.) en `css/styles.css`. Para crear una quinta paleta, agrega un bloque `html[data-theme='e']` con esos tokens y un botón más en `index.html`.
+
 ## Qué incluye
 
 - **Landing one-page**: hero, marquee, servicios con precios, equipo de barberos, galería, testimonios, FAQ, contacto con mapa y CTA final.

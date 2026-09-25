@@ -15,6 +15,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    // Aplica el tema antes de pintar para evitar el parpadeo de color.
+    (function () {
+      try {
+        var m = /[?&]theme=([a-d])/i.exec(window.location.search);
+        var t = (m && m[1].toLowerCase()) || window.localStorage.getItem('barberking.v1.theme') || 'a';
+        if (['a', 'b', 'c', 'd'].indexOf(t) === -1) t = 'a';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'a');
+      }
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -49,6 +63,12 @@
       </nav>
 
       <div class="header-cta">
+        <div class="theme-switch" role="group" aria-label="Modelo de color">
+          <button type="button" class="theme-dot" data-theme-set="a" aria-pressed="true" title="Dorado"><span class="sw sw-a"></span><span class="sr-only">Dorado</span></button>
+          <button type="button" class="theme-dot" data-theme-set="b" aria-pressed="false" title="Blanco y negro"><span class="sw sw-b"></span><span class="sr-only">Blanco y negro</span></button>
+          <button type="button" class="theme-dot" data-theme-set="c" aria-pressed="false" title="Azul"><span class="sw sw-c"></span><span class="sr-only">Azul</span></button>
+          <button type="button" class="theme-dot" data-theme-set="d" aria-pressed="false" title="Azul eléctrico"><span class="sw sw-d"></span><span class="sr-only">Azul eléctrico</span></button>
+        </div>
         <a class="btn btn-gold btn-sm" href="#reserva">Reservar hora</a>
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú">
           <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -393,6 +413,13 @@
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> BarberKing. Todos los derechos reservados.</span>
+        <div class="theme-switch" role="group" aria-label="Modelo de color">
+          <span class="theme-label">Color</span>
+          <button type="button" class="theme-dot" data-theme-set="a" aria-pressed="true" title="Dorado"><span class="sw sw-a"></span><span class="sr-only">Dorado</span></button>
+          <button type="button" class="theme-dot" data-theme-set="b" aria-pressed="false" title="Blanco y negro"><span class="sw sw-b"></span><span class="sr-only">Blanco y negro</span></button>
+          <button type="button" class="theme-dot" data-theme-set="c" aria-pressed="false" title="Azul"><span class="sw sw-c"></span><span class="sr-only">Azul</span></button>
+          <button type="button" class="theme-dot" data-theme-set="d" aria-pressed="false" title="Azul eléctrico"><span class="sw sw-d"></span><span class="sr-only">Azul eléctrico</span></button>
+        </div>
         <a href="#inicio">Volver arriba ↑</a>
       </div>
     </div>
