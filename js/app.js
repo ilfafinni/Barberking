@@ -776,12 +776,12 @@
 
   /* ---------- temas de color ---------- */
 
-  const THEMES = ['a', 'b', 'c', 'd'];
+  const THEMES = ['a', 'b', 'c', 'd', 'e'];
   const THEME_KEY = 'barberking.v1.theme';
 
   function readThemeFromUrl() {
     try {
-      var m = /[?&]theme=([a-d])/i.exec(window.location.search);
+      var m = /[?&]theme=([a-e])/i.exec(window.location.search);
       return m ? m[1].toLowerCase() : null;
     } catch (e) {
       return null;

@@ -20,9 +20,9 @@
     // Aplica el tema antes de pintar para evitar el parpadeo de color.
     (function () {
       try {
-        var m = /[?&]theme=([a-d])/i.exec(window.location.search);
+        var m = /[?&]theme=([a-e])/i.exec(window.location.search);
         var t = (m && m[1].toLowerCase()) || window.localStorage.getItem('barberking.v1.theme') || 'a';
-        if (['a', 'b', 'c', 'd'].indexOf(t) === -1) t = 'a';
+        if (['a', 'b', 'c', 'd', 'e'].indexOf(t) === -1) t = 'a';
         document.documentElement.setAttribute('data-theme', t);
       } catch (e) {
         document.documentElement.setAttribute('data-theme', 'a');
@@ -68,6 +68,7 @@
           <button type="button" class="theme-dot" data-theme-set="b" aria-pressed="false" title="Blanco y negro"><span class="sw sw-b"></span><span class="sr-only">Blanco y negro</span></button>
           <button type="button" class="theme-dot" data-theme-set="c" aria-pressed="false" title="Azul"><span class="sw sw-c"></span><span class="sr-only">Azul</span></button>
           <button type="button" class="theme-dot" data-theme-set="d" aria-pressed="false" title="Azul eléctrico"><span class="sw sw-d"></span><span class="sr-only">Azul eléctrico</span></button>
+          <button type="button" class="theme-dot" data-theme-set="e" aria-pressed="false" title="Verde bosque"><span class="sw sw-e"></span><span class="sr-only">Verde bosque</span></button>
         </div>
         <a class="btn btn-gold btn-sm" href="#reserva">Reservar hora</a>
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú">
@@ -419,6 +420,7 @@
           <button type="button" class="theme-dot" data-theme-set="b" aria-pressed="false" title="Blanco y negro"><span class="sw sw-b"></span><span class="sr-only">Blanco y negro</span></button>
           <button type="button" class="theme-dot" data-theme-set="c" aria-pressed="false" title="Azul"><span class="sw sw-c"></span><span class="sr-only">Azul</span></button>
           <button type="button" class="theme-dot" data-theme-set="d" aria-pressed="false" title="Azul eléctrico"><span class="sw sw-d"></span><span class="sr-only">Azul eléctrico</span></button>
+          <button type="button" class="theme-dot" data-theme-set="e" aria-pressed="false" title="Verde bosque"><span class="sw sw-e"></span><span class="sr-only">Verde bosque</span></button>
         </div>
         <a href="#inicio">Volver arriba ↑</a>
       </div>

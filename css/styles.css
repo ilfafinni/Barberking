@@ -75,6 +75,7 @@
    Temas de color
    a) Dorado (por defecto)   b) Blanco y negro
    c) Azul                    d) Azul eléctrico
+   e) Verde bosque
    ============================================================ */
 
 html[data-theme='a'] {
@@ -190,6 +191,34 @@ html[data-theme='d'] {
   --warn-bg: rgba(255, 209, 102, 0.12);
   --danger: #ff7a8a;
   --danger-bg: rgba(255, 122, 138, 0.12);
+}
+
+html[data-theme='e'] {
+  --bg: #050b08;
+  --bg-2: #08110d;
+  --panel: #0b1510;
+  --panel-2: #101d16;
+  --panel-3: #16281e;
+  --line: rgba(200, 235, 215, 0.1);
+  --line-strong: rgba(200, 235, 215, 0.2);
+  --text: #e8f3ec;
+  --text-soft: #c9ddd1;
+  --muted: #8fa99a;
+  --faint: #6a8275;
+  --on-accent: #04140c;
+  --ink-rgb: 5 11 8;
+  --shadow-rgb: 0 0 0;
+  --accent: #3fae7d;
+  --accent-2: #7fd6ad;
+  --accent-dim: #2a7d59;
+  --accent-deep: #164a34;
+  --accent-rgb: 63 174 125;
+  --ok: #4fd18f;
+  --ok-bg: rgba(79, 209, 143, 0.12);
+  --warn: #d9b451;
+  --warn-bg: rgba(217, 180, 81, 0.12);
+  --danger: #e08a72;
+  --danger-bg: rgba(224, 138, 114, 0.12);
 }
 
 /* ---------- Reset & base ---------- */
@@ -523,6 +552,9 @@ section.block {
 }
 .sw-d {
   background: linear-gradient(135deg, #8ff2ff, #22e0ff 50%, #066a80);
+}
+.sw-e {
+  background: linear-gradient(135deg, #7fd6ad, #3fae7d 50%, #164a34);
 }
 .footer-bottom .theme-switch {
   gap: 5px;
